@@ -1,0 +1,259 @@
+:root {
+    --star-gold-color: #ffce3e;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #fb5533;
+    --boder-color: #dbdbdb;
+    --navbar--height: 34px;
+    --header--height: 120px;
+    --header-sort-bar-height: 46px;
+    --header-with-search-height: calc(var(--header--height) - var(--navbar--height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* reponsive */
+
+.gird__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+
+/* 12 column gird layout */
+
+.gird__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.gird__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.gird__column-10 {
+    width: 83.3334%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* margin  */
+
+.mgr8 {
+    margin-right: 8px;
+}
+
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes headerNotifyGrow {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--grow-from));
+    }
+    to {
+        transform: scale(var(--grow-to));
+    }
+}
+
+
+/* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.3s;
+}
+
+.modal__overlay {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.modal__body {
+    --grow-from: 0.7;
+    --grow-to: 1;
+    margin: auto;
+    z-index: 1;
+    animation: growth linear 0.3s;
+}
+
+
+/* button style */
+
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    line-height: 1.6rem;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white-color);
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.btn-automatic:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--disable {
+    color: #949494;
+    background: #c3c3c3;
+    cursor: default;
+}
+
+.btn.btn-size-s {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+
+/* select input */
+
+.select-input {
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    min-width: 200px;
+    background: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.select-input__label {
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+    z-index: 1;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+
+
+/* list option */
+
+.select-input__list {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background: var(--white-color);
+    list-style: none;
+    padding: 10px 16px;
+}
+
+.select-input__link {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+
+/* pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item__link {
+    --height: 30px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    display: block;
+    text-align: center;
+    line-height: var(--height);
+}
+
+.pagination-item__icon {}
+
+.pagination-item--active .pagination-item__link {
+    color: var(--white-color);
+    background: var(--primary-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background: var(--primary-color);
+    filter: brightness(140%);
+}
